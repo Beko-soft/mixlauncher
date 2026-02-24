@@ -1,0 +1,43 @@
+# Build and Output Folders
+build/
+dist/
+bin/
+obj/
+installer_output/
+offline_bundle/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+
+# IDEs
+.idea/
+.vscode/
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Executables & Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Zips
+*.zip
+minecraftmix_pack.zip
+
+# Logs
+*.log
+mixlauncher.log
+minecraftmix_installer.log
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
