@@ -44,15 +44,15 @@ Source: "build\Release\styles\*"; DestDir: "{app}\styles"; Flags: ignoreversion 
 
 ; === Offline Ön Sürüm: Minecraft 1.21.4 Vanilla dosyaları ===
 ; (Kullanıcı "Ön Sürümü Etkinleştir" seçeneğini işaretlediğinde kopyalanır)
-Source: "offline_bundle\versions\1.21.4\*"; DestDir: "{localappdata}\.mixcrafter\versions\1.21.4"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "offline_bundle\libraries\*"; DestDir: "{localappdata}\.mixcrafter\libraries"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "offline_bundle\assets\*"; DestDir: "{localappdata}\.mixcrafter\assets"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "offline_bundle\versions\1.21.4\*"; DestDir: "{localappdata}\.minecraftmix\versions\1.21.4"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "offline_bundle\libraries\*"; DestDir: "{localappdata}\.minecraftmix\libraries"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "offline_bundle\assets\*"; DestDir: "{localappdata}\.minecraftmix\assets"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; === Offline Ön Sürüm: Fabric Loader dosyaları ===
-Source: "offline_bundle\versions\fabric-loader-*\*"; DestDir: "{localappdata}\.mixcrafter\versions\fabric-loader-{code:GetFabricVersionDir}"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "offline_bundle\versions\fabric-loader-*\*"; DestDir: "{localappdata}\.minecraftmix\versions\fabric-loader-{code:GetFabricVersionDir}"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; === Offline Profil Yapılandırması ===
-Source: "offline_bundle\profiles.json"; DestDir: "{localappdata}\.mixcrafter"; Tasks: installprerelease; Flags: ignoreversion
+Source: "offline_bundle\profiles.json"; DestDir: "{localappdata}\.minecraftmix"; Tasks: installprerelease; Flags: ignoreversion
 
 ; ═══════════════════════════════════════════════════════════
 ;  BAŞLAT MENÜSÜ & MASAÜSTÜ
@@ -84,9 +84,9 @@ var
   ProfileContent: String;
 begin
   if CurStep = ssPostInstall then begin
-    McDir := ExpandConstant('{localappdata}\.mixcrafter');
+    McDir := ExpandConstant('{localappdata}\.minecraftmix');
 
-    { .mixcrafter ana dizinlerini oluştur }
+    { .minecraftmix ana dizinlerini oluştur }
     ForceDirectories(McDir + '\versions');
     ForceDirectories(McDir + '\libraries');
     ForceDirectories(McDir + '\assets\indexes');

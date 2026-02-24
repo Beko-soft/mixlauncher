@@ -21,7 +21,7 @@ namespace fs = std::filesystem;
 static const char *MODRINTH = "https://api.modrinth.com/v2";
 static const char *FABRIC_META = "https://meta.fabricmc.net/v2";
 static const char *QUILT_META = "https://meta.quiltmc.org/v3";
-static const char *UA = "MixCrafter/2.0 (contact@mixcrafter)";
+static const char *UA = "MixCrafter/2.0 (contact@minecraftmix)";
 
 // ══════════════════════════════════════════════════════════
 ModManager::ModManager(const QString &mcDir, QObject *parent)

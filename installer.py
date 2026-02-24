@@ -30,9 +30,9 @@ UA = "MixLauncher-Installer/2.0"
 
 HOME = Path.home()
 if sys.platform == "win32":
-    MC_DIR = Path(os.environ.get("LOCALAPPDATA", HOME)) / ".mixcrafter"
+    MC_DIR = Path(os.environ.get("LOCALAPPDATA", HOME)) / ".minecraftmix"
 else:
-    MC_DIR = HOME / ".mixcrafter"
+    MC_DIR = HOME / ".minecraftmix"
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
 LAUNCHER_EXE = SCRIPT_DIR / "build" / "MixLauncher"

@@ -8,7 +8,7 @@
 set -e
 
 BUNDLE_DIR="offline_bundle"
-MC_DIR="$HOME/.mixcrafter"
+MC_DIR="$HOME/.minecraftmix"
 GAME_VER="1.21.4"
 
 echo "╔══════════════════════════════════════════════════╗"
