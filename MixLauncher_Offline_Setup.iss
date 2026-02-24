@@ -30,7 +30,7 @@ DisableProgramGroupPage=yes
 ; ═══════════════════════════════════════════════════════════
 [Tasks]
 Name: "desktopicon"; Description: "Masaüstü kısayolu oluştur"; GroupDescription: "Ek Görevler:"
-Name: "installprerelease"; Description: "Ön Sürümü Etkinleştir (Fabric 1.21.4 — İnternet gerektirmez)"; GroupDescription: "Offline Ön Sürüm:"; Flags: checkedonce
+Name: "installprerelease"; Description: "Minecraft 1.21.4'ü Bilgisayara İndir (İnternet gerektirmez)"; GroupDescription: "Offline Yardımcı Araçlar:"; Flags: checkedonce
 
 ; ═══════════════════════════════════════════════════════════
 ;  DOSYA LİSTESİ
@@ -48,8 +48,6 @@ Source: "offline_bundle\versions\1.21.4\*"; DestDir: "{localappdata}\.minecraftm
 Source: "offline_bundle\libraries\*"; DestDir: "{localappdata}\.minecraftmix\libraries"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "offline_bundle\assets\*"; DestDir: "{localappdata}\.minecraftmix\assets"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
 
-; === Offline Ön Sürüm: Fabric Loader dosyaları ===
-Source: "offline_bundle\versions\fabric-loader-*\*"; DestDir: "{localappdata}\.minecraftmix\versions\fabric-loader-{code:GetFabricVersionDir}"; Tasks: installprerelease; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; === Offline Profil Yapılandırması ===
 Source: "offline_bundle\profiles.json"; DestDir: "{localappdata}\.minecraftmix"; Tasks: installprerelease; Flags: ignoreversion
@@ -97,16 +95,12 @@ begin
     if IsTaskSelected('installprerelease') then begin
       ProfilePath := McDir + '\profiles.json';
       if not FileExists(ProfilePath) then begin
-        ProfileContent := '[{"name":"Fabric 1.21.4","gameVersion":"1.21.4","loader":"fabric","modsPath":"' + McDir + '/profiles/Fabric 1.21.4/mods"}]';
+        ProfileContent := '[{"name":"Vanilla 1.21.4","gameVersion":"1.21.4","loader":"vanilla","modsPath":""}]';
         SaveStringToFile(ProfilePath, ProfileContent, False);
       end;
 
-      { Mods klasörünü oluştur }
-      ForceDirectories(McDir + '\profiles\Fabric 1.21.4\mods');
-
-      MsgBox('Ön Sürüm (Fabric 1.21.4) başarıyla kuruldu!' + #13#10 +
-             'İnternet olmadan "Fabric 1.21.4" profiliyle oynayabilirsiniz.' + #13#10 + #13#10 +
-             'Mods klasörü: ' + McDir + '\profiles\Fabric 1.21.4\mods',
+      MsgBox('Minecraft 1.21.4 başarıyla kuruldu!' + #13#10 +
+             'İnternet olmadan "Vanilla 1.21.4" profiliyle oynayabilirsiniz.',
              mbInformation, MB_OK);
     end;
   end;

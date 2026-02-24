@@ -9,9 +9,9 @@ import logging
 from pathlib import Path
 
 # ---------- Ayarlar & Sabitler ----------
-APP_TITLE = "MinecraftMix Ön Versiyon Kurulumu"
+APP_TITLE = "MinecraftMix 1.21.4 Kurulumu"
 ZIP_FILENAME = "minecraftmix_pack.zip"
-TARGET_VERSION_NAME = "Pre-Version"
+TARGET_VERSION_NAME = "1.21.4"
 
 # Platforma göre hedef dizin (.minecraftmix kökü)
 if sys.platform == "win32":
@@ -104,7 +104,7 @@ class InstallerApp:
         
         # --- Orta Bölüm: Açıklama ---
         desc_text = (
-            "Bu işlem Fabric 1.21.4 ön sürümünü offline olarak kurar.\n"
+            "Bu işlem Minecraft 1.21.4 sürümünü offline olarak kurar.\n"
             "İnternet bağlantısı gerekmez.\n\n"
             f"Hedef: {TARGET_DIR}"
         )
@@ -122,7 +122,7 @@ class InstallerApp:
         # Buton (Custom Hover özellikli Tkinter butonu)
         self.install_btn = tk.Button(
             main_frame,
-            text="Ön Versiyonu Etkinleştir",
+            text="1.21.4 Sürümünü İndir",
             font=("Segoe UI", 12, "bold"),
             bg=COLORS["accent"],
             fg="#000000",

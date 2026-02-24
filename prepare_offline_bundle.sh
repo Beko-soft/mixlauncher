@@ -13,7 +13,7 @@ GAME_VER="1.21.4"
 
 echo "╔══════════════════════════════════════════════════╗"
 echo "║  MixLauncher Offline Bundle Hazırlayıcı         ║"
-echo "║  Fabric $GAME_VER Ön Sürüm                      ║"
+echo "║  Minecraft $GAME_VER Sürümü                     ║"
 echo "╚══════════════════════════════════════════════════╝"
 echo ""
 
@@ -32,27 +32,6 @@ if [ -d "$MC_DIR/versions/$GAME_VER" ]; then
 else
     echo "  ✗ HATA: $MC_DIR/versions/$GAME_VER bulunamadı!"
     echo "    Önce launcher'dan $GAME_VER sürümünü indirin."
-    exit 1
-fi
-
-# ═══ 2. Fabric Loader Dosyaları ═══
-echo "[2/4] Fabric Loader dosyaları kopyalanıyor..."
-FABRIC_DIR=""
-for dir in "$MC_DIR/versions"/fabric-loader-*-"$GAME_VER"; do
-    if [ -d "$dir" ]; then
-        FABRIC_DIR="$dir"
-        break
-    fi
-done
-
-if [ -n "$FABRIC_DIR" ]; then
-    FABRIC_NAME=$(basename "$FABRIC_DIR")
-    mkdir -p "$BUNDLE_DIR/versions/$FABRIC_NAME"
-    cp -r "$FABRIC_DIR/"* "$BUNDLE_DIR/versions/$FABRIC_NAME/"
-    echo "  ✓ Fabric Loader kopyalandı: $FABRIC_NAME"
-else
-    echo "  ✗ HATA: Fabric loader bulunamadı!"
-    echo "    Önce launcher'dan Fabric ile $GAME_VER profili oluşturun."
     exit 1
 fi
 
@@ -82,9 +61,9 @@ echo "Profil yapılandırması oluşturuluyor..."
 cat > "$BUNDLE_DIR/profiles.json" << 'PROFILJSON'
 [
   {
-    "name": "Fabric 1.21.4",
+    "name": "Vanilla 1.21.4",
     "gameVersion": "1.21.4",
-    "loader": "fabric",
+    "loader": "vanilla",
     "modsPath": ""
   }
 ]
