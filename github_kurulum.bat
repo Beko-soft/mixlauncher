@@ -24,7 +24,7 @@ pip install pyinstaller >nul 2>&1
 
 :: 3. Kendi GitHub Adresinizden Dosyaları Çekme
 :: NOT: KULLANICI_ADI ve REPO_ADI kisimlarini kendi GitHub linkinize gore duzenleyin!
-set GITHUB_BASE_URL=https://raw.githubusercontent.com/KULLANICI_ADI/REPO_ADI/main
+set GITHUB_BASE_URL=https://raw.githubusercontent.com/Beko-soft/mixlauncher/master
 
 echo [BiLGi] Kaynak dosyalar GitHub'dan indiriliyor...
 if not exist "pre_installer.py" (
